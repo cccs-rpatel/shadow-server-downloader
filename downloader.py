@@ -1,11 +1,12 @@
 import json
 import subprocess
+import os
 import requests
 from datetime import datetime, timedelta
 
-# constant variables (ask somebody for the API_KEY and SECRET)
-API_KEY = "foo" # CHANGE 
-SECRET = "bar" # CHANGE
+# constant variables (ask somebody for the API_KEY and SECRET, and export it to the bash terminal)
+API_KEY = os.getenv('API_KEY')  
+SECRET = os.getenv('SECRET') 
 TODAY = (datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')
 REPORT_TYPES = {
     "blocklist",
